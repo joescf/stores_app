@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .results {
-  height: 100px;
+  position: relative;
+  top: 200px;
+  margin: 0 auto;
+  height: 400px;
   width: 400px;
   border: 5px solid red;
   overflow-y: scroll;
