@@ -13,3 +13,31 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+function renderStore( store ) {
+  // var $container = $('#albums');
+  // var $album = $('<li class="album">');
+  // var $name = $('<a target="_blank" href="' + album.collectionViewUrl + '">')
+  // $name.text( album.collectionName );
+  // var $img = $('<img>').attr('src', album.artworkUrl100)
+  // // render the image
+  // $album.append( $name );
+  // $album.append($img);
+  // $container.append( $album );
+  console.log(store[23])
+}
+
+
+
+function getStores() {
+  $.getJSON('/stores').done(function( stores ) {
+    // stores.results.forEach(function( store ) {
+      renderStore( stores );
+    // })
+  })
+}
+
+
+
+$(function() {
+  getStores();
+})
