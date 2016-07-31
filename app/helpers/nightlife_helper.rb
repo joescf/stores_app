@@ -1,0 +1,2 @@
+module NightlifeHelper
+end
