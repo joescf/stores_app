@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :personal_and_professional_services , only:[:index]
   resources :full_service_dining , only:[:index]
   resources :visitor_services , only:[:index]
+  resources :shop
 
   root 'welcome#index'
 

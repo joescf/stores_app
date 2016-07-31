@@ -1,0 +1,2 @@
+module SeedFileHelper
+end

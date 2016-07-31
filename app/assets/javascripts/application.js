@@ -25,12 +25,14 @@ $(document).ready(function() {
        $.getJSON('/nightlife').done(function( nightlife ) {
 
         for (let i = 0; i < nightlife.length; i++) {
-            let list = $('<ul>')
+            let list = $('<ul>');
             let name = $('<li>').text(nightlife[i].cnbio_org_name);
-            let address = $('<li>').text(nightlife[i].cnadrprf_addrline1)
+            let address = $('<li>').text(nightlife[i].cnadrprf_addrline1);
+            let saveButton = $('<button>').text('save store');
             name.appendTo(list);
-            address.appendTo(list)
-            list.appendTo('.results')
+            address.appendTo(list);
+            saveButton.appendTo(list);
+            list.appendTo('.results');
           }
 
 
@@ -39,12 +41,14 @@ $(document).ready(function() {
         $.getJSON('/shopping').done(function( shopping ) {
 
           for (let i = 0; i < shopping.length; i++) {
-            let list = $('<ul>')
+            let list = $('<ul>');
             let name = $('<li>').text(shopping[i].cnbio_org_name);
-            let address = $('<li>').text(shopping[i].cnadrprf_addrline1)
+            let address = $('<li>').text(shopping[i].cnadrprf_addrline1);
+            let saveButton = $('<button>').text('save store');
             name.appendTo(list);
-            address.appendTo(list)
-            list.appendTo('.results')
+            address.appendTo(list);
+            saveButton.appendTo(list);
+            list.appendTo('.results');
           }
 
 
@@ -54,12 +58,14 @@ $(document).ready(function() {
 
 
           for (let i = 0; i < pps.length; i++) {
-            let list = $('<ul>')
+            let list = $('<ul>');
             let name = $('<li>').text(pps[i].cnbio_org_name);
-            let address = $('<li>').text(pps[i].cnadrprf_addrline1)
+            let address = $('<li>').text(pps[i].cnadrprf_addrline1);
+            let saveButton = $('<button>').text('save store');
             name.appendTo(list);
-            address.appendTo(list)
-            list.appendTo('.results')
+            address.appendTo(list);
+            saveButton.appendTo(list);
+            list.appendTo('.results');
           }
 
 
@@ -68,12 +74,14 @@ $(document).ready(function() {
         $.getJSON('/full_service_dining').done(function( FSD ) {
 
           for (let i = 0; i < FSD.length; i++) {
-            let list = $('<ul>')
+            let list = $('<ul>');
             let name = $('<li>').text(FSD[i].cnbio_org_name);
-            let address = $('<li>').text(FSD[i].cnadrprf_addrline1)
+            let address = $('<li>').text(FSD[i].cnadrprf_addrline1);
+            let saveButton = $('<button>').text('save store');
             name.appendTo(list);
-            address.appendTo(list)
-            list.appendTo('.results')
+            address.appendTo(list);
+            saveButton.appendTo(list);
+            list.appendTo('.results');
           }
 
 
@@ -84,12 +92,14 @@ $(document).ready(function() {
           console.log(VS)
 
           for (let i = 0; i < VS.length; i++) {
-            let list = $('<ul>')
+            let list = $('<ul>');
             let name = $('<li>').text(VS[i].cnbio_org_name);
-            let address = $('<li>').text(VS[i].cnadrprf_addrline1)
+            let address = $('<li>').text(VS[i].cnadrprf_addrline1);
+            let saveButton = $('<button>').text('save store');
             name.appendTo(list);
-            address.appendTo(list)
-            list.appendTo('.results')
+            address.appendTo(list);
+            saveButton.appendTo(list);
+            list.appendTo('.results');
           }
         })
       }
