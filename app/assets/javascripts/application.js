@@ -66,6 +66,34 @@ $(document).ready(function() {
           $('<p>').text(name3).appendTo('body');
           $('<p>').text(address3).appendTo('body');
          })
+      }else if ($('#selectBox').val() === 'personal_and_professional_services') {
+        $.getJSON('/personal_and_professional_services').done(function( pps ) {
+
+          let firstPpf = pps.shift();
+          console.log(firstPpf)
+          let name1 = firstPpf.cnbio_org_name;
+          let address1 = firstPpf.cnadrprf_addrline1;
+          $('<p>').text(name1).appendTo('body');
+          $('<p>').text(address1).appendTo('body');
+
+          let secondPpf = pps.shift();
+          console.log(secondPpf)
+          let name2 = secondPpf.cnbio_org_name;
+          let address2 = secondPpf.cnadrprf_addrline1;
+          $('<p>').text(name2).appendTo('body');
+          $('<p>').text(address2).appendTo('body');
+
+          let thirdPpf = pps.shift();
+          console.log(thirdPpf)
+          let name3 = thirdPpf.cnbio_org_name;
+          let address3 = thirdPpf.cnadrprf_addrline1;
+          $('<p>').text(name3).appendTo('body');
+          $('<p>').text(address3).appendTo('body');
+        })
+      } else if($('#selectBox').val() === 'full_service_dining') {
+        $.getJSON('/full_service_dining').done(function( pps ) {
+
+        }
       }
     })
   }
