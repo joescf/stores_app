@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  get 'visitor/Services'
+
   resources :stores , only:[:index]
   resources :shopping , only:[:index]
   resources :nightlife , only:[:index]
   resources :personal_and_professional_services , only:[:index]
+  resources :full_service_dining , only:[:index]
+  resources :visitor_services , only:[:index]
 
   root 'welcome#index'
 

@@ -1,0 +1,2 @@
+module FullServiceDiningHelper
+end
