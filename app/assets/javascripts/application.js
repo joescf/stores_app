@@ -17,12 +17,14 @@
 // thanks to Alexander for for loop help
 
 $(document).ready(function() {
-
   function chooseCatagory() {
+    let background;
     $('#button').click(function() {
-      console.log($('#selectBox').val());
-      if($('#selectBox').val() === 'nightlife') {
-       $.getJSON('/nightlife').done(function( nightlife ) {
+      let $selectBox = $('#selectBox').val();
+      if($('#selectBox').val()){
+
+        $.getJSON(/stores/+$selectBox).done(function( nightlife ) {
+        console.log($('#selectBox').val());
 
         $('.results').empty();
 
@@ -38,93 +40,28 @@ $(document).ready(function() {
           }
 
           $('body').removeClass();
-          $('body').addClass('nightlife');
+        if ($selectBox === "Nightlife") {
+          background = 'nightlife';
+        }else if ($selectBox === "Shopping") {
+          background = 'shopping';
+        }else if ($selectBox === "Personal and Professional Services") {
+          background = 'pps';
+        }else if ($selectBox === "Full Service Dining") {
+          background = 'dining';
+        }else if ($selectBox === "Visitor Services") {
+          background = 'vs';
+        }
 
 
+          $('body').addClass(background);
     })
-      }else if ($('#selectBox').val() === 'shopping') {
-        $.getJSON('/shopping').done(function( shopping ) {
-
-          $('.results').empty();
-
-          for (let i = 0; i < shopping.length; i++) {
-            let list = $('<ul>');
-            let name = $('<li>').text(shopping[i].cnbio_org_name);
-            let address = $('<li>').text(shopping[i].cnadrprf_addrline1);
-            let saveButton = $('<button>').text('save store');
-            name.appendTo(list);
-            address.appendTo(list);
-            saveButton.appendTo(list);
-            list.appendTo('.results');
-          }
-
-          $('body').removeClass();
-          $('body').addClass('shopping');
-
-         })
-      }else if ($('#selectBox').val() === 'personal_and_professional_services') {
-        $.getJSON('/personal_and_professional_services').done(function( pps ) {
-
-          $('.results').empty();
-
-          for (let i = 0; i < pps.length; i++) {
-            let list = $('<ul>');
-            let name = $('<li>').text(pps[i].cnbio_org_name);
-            let address = $('<li>').text(pps[i].cnadrprf_addrline1);
-            let saveButton = $('<button>').text('save store');
-            name.appendTo(list);
-            address.appendTo(list);
-            saveButton.appendTo(list);
-            list.appendTo('.results');
-          }
-
-          $('body').removeClass();
-          $('body').addClass('pps');
-        })
-      } else if($('#selectBox').val() === 'full_service_dining') {
-        $.getJSON('/full_service_dining').done(function( FSD ) {
-
-          $('.results').empty();
-
-          for (let i = 0; i < FSD.length; i++) {
-            let list = $('<ul>');
-            let name = $('<li>').text(FSD[i].cnbio_org_name);
-            let address = $('<li>').text(FSD[i].cnadrprf_addrline1);
-            let saveButton = $('<button>').text('save store');
-            name.appendTo(list);
-            address.appendTo(list);
-            saveButton.appendTo(list);
-            list.appendTo('.results');
-          }
-
-          $('body').removeClass();
-          $('body').addClass('dining');
-
-        })
-      } else if ($('#selectBox').val() === 'visitor_services') {
-        $.getJSON('/visitor_services').done(function( VS ) {
-
-          $('.results').empty();
-
-          for (let i = 0; i < VS.length; i++) {
-            let list = $('<ul>');
-            let name = $('<li>').text(VS[i].cnbio_org_name);
-            let address = $('<li>').text(VS[i].cnadrprf_addrline1);
-            let saveButton = $('<button>').text('save store');
-            name.appendTo(list);
-            address.appendTo(list);
-            saveButton.appendTo(list);
-            list.appendTo('.results');
-          }
-
-          $('body').removeClass();
-          $('body').addClass('vs');
+      }
         })
       }
-    })
-  }
+
 
 $(function() {
   chooseCatagory();
   })
+
 });
