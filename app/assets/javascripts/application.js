@@ -17,6 +17,7 @@
 // thanks to Alexander for for loop help
 
 $(document).ready(function() {
+
   function chooseCatagory() {
     let background;
     $('#button').click(function() {
@@ -32,10 +33,15 @@ $(document).ready(function() {
             let list = $('<ul>');
             let name = $('<li>').text(nightlife[i].cnbio_org_name);
             let address = $('<li>').text(nightlife[i].cnadrprf_addrline1);
-            let saveButton = $('<button>').text('save store');
-            name.appendTo(list);
-            address.appendTo(list);
-            saveButton.appendTo(list);
+            let saveButton = $('<button>')
+              .addClass('saveButton')
+              .data('info', {
+                name: nightlife[i].cnbio_org_name,
+                address: nightlife[i].cnadrprf_addrline1
+              })
+              .text(`save store ${i}`);
+            list.append(name, address, saveButton);
+
             list.appendTo('.results');
           }
 
@@ -56,9 +62,34 @@ $(document).ready(function() {
           $('body').addClass(background);
     })
       }
-        })
-      }
+    })
+  }
 
+$('.results').on("click", "button.saveButton", function(e) {
+    let info = $(e.target)
+    .data('info');
+    $.post('/shop', info).done ( (response) => {
+
+})
+
+
+
+
+// $(saveButton).click(createPost);
+// function createPost(e){
+//     console.log('hi');
+//     e.preventDefault();
+//     let $children = $(e.target).children();
+//     let data = {
+//       f_name: $children.eq(0).val(),
+//       l_name: $children.eq(1).val(),
+//       entry: $children.eq(2).val()
+//       }
+
+//     console.log(response);
+//     })
+
+  })
 
 $(function() {
   chooseCatagory();

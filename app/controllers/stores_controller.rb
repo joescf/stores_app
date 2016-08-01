@@ -13,4 +13,7 @@ class StoresController < ApplicationController
     parsed_body = JSON.parse(response.body)
     render json: parsed_body
   end
+  def create
+
+  end
 end
