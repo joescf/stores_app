@@ -3,14 +3,56 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .results {
   position: relative;
-  top: 200px;
+  top: 150px;
   margin: 0 auto;
   height: 400px;
   width: 400px;
-  border: 5px solid red;
+  border: 0 solid red;
   overflow-y: scroll;
-  background-color: blue;
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 10%;
+}
+li {
+  color: white;
+}
+p {
+  color: lightgreen;
 }
 body {
-  background-image: url('https://i.ytimg.com/vi/hFlmkkVve94/maxresdefault.jpg')
+  background-image: url('https://i.ytimg.com/vi/hFlmkkVve94/maxresdefault.jpg');
 }
+.nightlife {
+  background-image: url('http://phuketprivateparty.com/wp-content/uploads/2015/05/Nightlife-and-nightclubs-in-Phuket.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+h1 {
+  color: yellow;
+}
+.shopping {
+  background-image: url('http://www.freerangekids.com/wp-content/uploads/2016/04/mall-2-475x316.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.pps {
+  background-image: url('http://busfurnamerica.com/wp-content/uploads/2014/07/dreamstime_l_16215963_WEB.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.dining {
+  background-image: url('http://epmgaa.media.lionheartdms.com/img/photos/2013/06/04/restaurant-fine-dining-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.vs {
+ background-image: url('https://res-1.cloudinary.com/simpleview/image/upload/c_fill,f_auto,h_1110,q_75,w_1920/v1/clients/vancouverbc/Our-Visitor-Centre%20(2)_9b16d1ec-f169-402d-8fed-9ef8f07fc5f1.jpg');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center center;
+}
+
+

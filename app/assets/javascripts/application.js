@@ -24,6 +24,8 @@ $(document).ready(function() {
       if($('#selectBox').val() === 'nightlife') {
        $.getJSON('/nightlife').done(function( nightlife ) {
 
+        $('.results').empty();
+
         for (let i = 0; i < nightlife.length; i++) {
             let list = $('<ul>');
             let name = $('<li>').text(nightlife[i].cnbio_org_name);
@@ -35,10 +37,15 @@ $(document).ready(function() {
             list.appendTo('.results');
           }
 
+          $('body').removeClass();
+          $('body').addClass('nightlife');
+
 
     })
       }else if ($('#selectBox').val() === 'shopping') {
         $.getJSON('/shopping').done(function( shopping ) {
+
+          $('.results').empty();
 
           for (let i = 0; i < shopping.length; i++) {
             let list = $('<ul>');
@@ -51,11 +58,14 @@ $(document).ready(function() {
             list.appendTo('.results');
           }
 
+          $('body').removeClass();
+          $('body').addClass('shopping');
 
          })
       }else if ($('#selectBox').val() === 'personal_and_professional_services') {
         $.getJSON('/personal_and_professional_services').done(function( pps ) {
 
+          $('.results').empty();
 
           for (let i = 0; i < pps.length; i++) {
             let list = $('<ul>');
@@ -68,10 +78,13 @@ $(document).ready(function() {
             list.appendTo('.results');
           }
 
-
+          $('body').removeClass();
+          $('body').addClass('pps');
         })
       } else if($('#selectBox').val() === 'full_service_dining') {
         $.getJSON('/full_service_dining').done(function( FSD ) {
+
+          $('.results').empty();
 
           for (let i = 0; i < FSD.length; i++) {
             let list = $('<ul>');
@@ -84,12 +97,14 @@ $(document).ready(function() {
             list.appendTo('.results');
           }
 
+          $('body').removeClass();
+          $('body').addClass('dining');
 
         })
       } else if ($('#selectBox').val() === 'visitor_services') {
         $.getJSON('/visitor_services').done(function( VS ) {
 
-          console.log(VS)
+          $('.results').empty();
 
           for (let i = 0; i < VS.length; i++) {
             let list = $('<ul>');
@@ -101,6 +116,9 @@ $(document).ready(function() {
             saveButton.appendTo(list);
             list.appendTo('.results');
           }
+
+          $('body').removeClass();
+          $('body').addClass('vs');
         })
       }
     })
