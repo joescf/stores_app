@@ -74,21 +74,6 @@ $('.results').on("click", "button.saveButton", function(e) {
 
 
 
-
-// $(saveButton).click(createPost);
-// function createPost(e){
-//     console.log('hi');
-//     e.preventDefault();
-//     let $children = $(e.target).children();
-//     let data = {
-//       f_name: $children.eq(0).val(),
-//       l_name: $children.eq(1).val(),
-//       entry: $children.eq(2).val()
-//       }
-
-//     console.log(response);
-//     })
-
   })
 
 $(function() {
