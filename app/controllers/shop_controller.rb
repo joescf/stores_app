@@ -10,4 +10,9 @@ class ShopController < ApplicationController
     puts params[:address]
     Store.create({name: params[:name], address: params[:address]})
    end
+   def destroy
+    store = Store.find(params[:id])
+    store.destroy({name: params[:name], address: params[:address]})
+    puts 'test'
+   end
 end

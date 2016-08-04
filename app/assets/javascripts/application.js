@@ -70,26 +70,35 @@ $('.results').on("click", "button.saveButton", function(e) {
     .data('info');
     $.post('/shop', info).done ( (response) => {
 
-})
-
-
-
-
-// $(saveButton).click(createPost);
-// function createPost(e){
-//     console.log('hi');
-//     e.preventDefault();
-//     let $children = $(e.target).children();
-//     let data = {
-//       f_name: $children.eq(0).val(),
-//       l_name: $children.eq(1).val(),
-//       entry: $children.eq(2).val()
-//       }
-
-//     console.log(response);
-//     })
-
   })
+})
+$.getJSON(/shop/).done(function( myShops ) {
+  console.log(myShops);
+  for (let i = 0; i < myShops.length; i++) {
+    let $list = $('<ul>');
+    let $name = $('<li>').text(myShops[i].name);
+    let $address = $('<li>').text(myShops[i].address);
+    let $deleteButton = $('<button>')
+    .addClass('deleteButton')
+    .data('info', {
+                name: myShops[i].cnbio_org_name,
+                address: myShops[i].cnadrprf_addrline1
+              })
+    .text('delete store');
+    $list.append($name, $address, $deleteButton);
+    $('.myShop').prepend($list);
+  }
+})
+$('.myShop').on("click", "button.deleteButton", function(e) {
+  $.ajax({
+    url: '/shop',
+    type: 'DELETE',
+    success: function(result) {
+        console.log('hi there');
+    }
+});
+
+})
 
 $(function() {
   chooseCatagory();

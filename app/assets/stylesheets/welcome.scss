@@ -2,9 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .results {
-  position: relative;
-  top: 150px;
-  margin: 0 auto;
+  position: absolute;
+  top: 350px;
+  margin: 0;
+  left: 300px;
   height: 400px;
   width: 400px;
   border: 0 solid red;
@@ -16,7 +17,11 @@ li {
   color: white;
 }
 p {
+  position: relative;
+  left: 440px;
   color: lightgreen;
+  font-size: 35px;
+
 }
 body {
   background-image: url('https://i.ytimg.com/vi/hFlmkkVve94/maxresdefault.jpg');
@@ -54,5 +59,19 @@ h1 {
  background-repeat: no-repeat;
  background-position: center center;
 }
-
+.myShop {
+  position: absolute;
+  top: 350px;
+  right: 300px;
+  margin: 0 auto;
+  height: 400px;
+  width: 400px;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 10%;
+}
+.right {
+  position: relative;
+  right: 40px
+}
 
